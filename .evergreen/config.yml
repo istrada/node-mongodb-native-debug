@@ -1226,6 +1226,7 @@ tasks:
           working_dir: src
           binary: bash
           env:
+            DRIVERS_TOOLS: ${DRIVERS_TOOLS}
             PROJECT_DIRECTORY: ${PROJECT_DIRECTORY}
             ENVIRONMENT: k8s
             K8S_VARIANT: eks
@@ -1243,6 +1244,7 @@ tasks:
           working_dir: src
           binary: bash
           env:
+            DRIVERS_TOOLS: ${DRIVERS_TOOLS}
             PROJECT_DIRECTORY: ${PROJECT_DIRECTORY}
             ENVIRONMENT: k8s
             K8S_VARIANT: gke
@@ -1260,6 +1262,7 @@ tasks:
           working_dir: src
           binary: bash
           env:
+            DRIVERS_TOOLS: ${DRIVERS_TOOLS}
             PROJECT_DIRECTORY: ${PROJECT_DIRECTORY}
             ENVIRONMENT: k8s
             K8S_VARIANT: aks
