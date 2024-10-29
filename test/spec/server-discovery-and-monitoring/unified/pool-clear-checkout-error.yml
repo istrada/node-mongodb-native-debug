@@ -16,6 +16,9 @@ createEntities:
 
 tests:
   - description: Pool is cleared before connection is closed (authentication error)
+    runOnRequirements:
+      - auth: true
+
     operations:
       - name: failPoint
         object: testRunner
@@ -126,7 +129,7 @@ tests:
               previousDescription:
                 type: "Unknown"
               newDescription:
-                type: "Single"          
+                type: "Single"
           count: 1
 
       - name: failPoint
@@ -143,7 +146,7 @@ tests:
                 - isMaster
               appName: authErrorTest
               closeConnection: true
-              
+
       - name: insertMany
         object: *collection
         arguments:
@@ -174,4 +177,3 @@ tests:
           - poolClearedEvent: {}
           - connectionClosedEvent: {}
           - connectionCheckOutFailedEvent: {}
-
