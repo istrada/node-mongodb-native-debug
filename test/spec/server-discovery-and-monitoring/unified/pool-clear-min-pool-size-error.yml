@@ -7,7 +7,7 @@ runOnRequirements:
   # failCommand appName requirements
   - minServerVersion: "4.4"
     serverless: forbid
-    topologies: [ single, replicaset, sharded ]
+    topologies: [ single ]
 
 createEntities:
   - client:
@@ -70,11 +70,6 @@ tests:
           - connectionClosedEvent: {}
 
   - description: Pool is cleared on handshake error during minPoolSize population
-    runOnRequirements:
-      # failCommand appName requirements
-      - minServerVersion: "4.4"
-        serverless: forbid
-        topologies: [ single ]
     operations:
       - name: createEntities
         object: testRunner

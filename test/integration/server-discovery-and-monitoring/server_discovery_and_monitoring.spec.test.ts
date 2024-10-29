@@ -18,7 +18,7 @@ const skipTable: { pattern: string; reason: string }[] = [
   }
 ];
 
-describe.only('SDAM Unified Tests (Spec)', function () {
+describe('SDAM Unified Tests (Spec)', function () {
   const specTests = loadSpecTests(path.join('server-discovery-and-monitoring', 'unified'));
   runUnifiedSuite(specTests, test => {
     for (const { pattern, reason } of skipTable) {
