@@ -584,7 +584,9 @@ export class Topology extends TypedEventEmitter<TopologyEvents> {
     };
 
     const serverSelectionTimeoutMS = options.serverSelectionTimeoutMS;
+console.log('#### topology options', options);
     if (serverSelectionTimeoutMS) {
+console.log('#### topology setting timeout handler');
       waitQueueMember.timer = setTimeout(() => {
         waitQueueMember[kCancelled] = true;
         waitQueueMember.timer = undefined;
